@@ -1,0 +1,6 @@
+static_lib_calculator_make : calculator.o
+	gcc -o static_lib_calculator_make calculator.o -I./lib -L./lib -larithmatic
+calculator.o : calculator.c
+	gcc -c calculator.c -I./lib -L./lib -larithmatic
+clean :
+	rm -f static_lib_calculator_make calculator.o

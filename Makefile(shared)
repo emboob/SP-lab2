@@ -1,0 +1,6 @@
+shared_lib_calculator_make : calculator.o
+	gcc -o shared_lib_calculator_make calculator.o -I./lib -L./lib -Wl,--rpath=./lib -larithmatic
+calculator.o : calculator.c
+	gcc -c calculator.c -I./lib -L./lib -larithmatic
+clean :
+	rm -f shared_lib_calculator_make calculator.o
